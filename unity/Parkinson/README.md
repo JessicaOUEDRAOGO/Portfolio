@@ -38,8 +38,11 @@ These interactions are designed to reflect the motor difficulties experienced by
 ## Project Context
 This project was developed by a international team during the **XR Franco-German Hackathon (Paris, 2025)**, focusing on the use of immersive technologies to address social and health-related challenges.
 
-## Presentation Video
+
 ## Presentation Video
 The video is stored via Git LFS. To download it, visit the repository and click on:
 "unity/Parkinson/video_compressed.mp4" → Download.
 
+Music used in the presentation video: Free audio from Canva
+License: Free for personal and commercial use
+Source: https://www.canva.com/
