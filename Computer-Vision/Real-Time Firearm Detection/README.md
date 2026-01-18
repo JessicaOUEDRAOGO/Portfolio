@@ -153,6 +153,12 @@ A short demonstration video is included to showcase:
 Presentation Video
 The video is stored via Git LFS. To download it, visit the repository and click on: "Computer-Vision/Real-Time Firearm Detection/Firearm video.mp4" → Download. 
 
+## Team
+
+This project was completed in a pair.  
+- OUEDRAOGO Jessica https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/?originalSubdomain=fr   
+- TAMINI Abel https://www.linkedin.com/in/abel-tamini-314366244/
+
 
 
 
