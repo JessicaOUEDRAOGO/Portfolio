@@ -37,6 +37,7 @@ These interactions are designed to reflect the motor difficulties experienced by
 
 ## Project Context
 This project was developed by a international team during the **XR Franco-German Hackathon (Paris, 2025)**, focusing on the use of immersive technologies to address social and health-related challenges.
+An article about our project was published in the newspaper: https://inside.ensam.eu/node/3007 
 
 
 ## Presentation Video
