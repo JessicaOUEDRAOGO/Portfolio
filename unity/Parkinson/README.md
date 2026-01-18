@@ -37,7 +37,7 @@ These interactions are designed to reflect the motor difficulties experienced by
 
 ## Project Context
 This project was developed by a international team during the **XR Franco-German Hackathon (Paris, 2025)**, focusing on the use of immersive technologies to address social and health-related challenges.
-An article about our project was published in the Arts et Métiers internal newspaper https://inside.ensam.eu/node/3007 . Since the article is behind a login, you can also read it directly here: [Project Article PDF](./article.pdf)
+An article about our project was published in the Arts et Métiers internal newspaper https://inside.ensam.eu/node/3007 . Since the article is behind a login, you can also read it directly here: unity/Parkinson/Parkinson_Article.pdf 
 
 
 ## Presentation Video
