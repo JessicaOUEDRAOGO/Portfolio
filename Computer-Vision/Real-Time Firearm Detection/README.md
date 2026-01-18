@@ -151,13 +151,14 @@ A short demonstration video is included to showcase:
 3. Node-RED automation pipeline
 
 Presentation Video
-The video is stored via Git LFS. To download it, visit the repository and click on: "Computer-Vision/Real-Time Firearm Detection/Firearm video.mp4" → Download. 
+The video is stored via Git LFS. To download it, visit the repository and click on: "Computer-Vision/Real-Time Firearm Detection/Firearm video.mp4" → Download ( https://github.com/Jessica123-cell/portfolio-3d-unity-unreal/blob/main/Computer-Vision/Real-Time%20Firearm%20Detection/Firearm%20video.mp4 ).
 
 ## Team
 
 This project was completed in a pair.  
 - OUEDRAOGO Jessica https://www.linkedin.com/in/jessica-ouedraogo-2485332b0/?originalSubdomain=fr   
 - TAMINI Abel https://www.linkedin.com/in/abel-tamini-314366244/
+
 
 
 
