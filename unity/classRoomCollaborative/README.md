@@ -43,5 +43,5 @@ The global architecture is organized around four main functional modules:
 This project explores the use of collaborative VR environments as tools for learning and interaction, combining real-time 3D, networking, and immersive user experience design.
 
 Presentation Video
-The video is stored via Git LFS. To download it, visit the repository and click on: "unity/classRoomCollaborative/video.mp4" → Download.
+The video is stored via Git LFS. To download it, visit the repository and click on: "unity/classRoomCollaborative/video.mp4" → Download ( https://github.com/Jessica123-cell/portfolio-3d-unity-unreal/blob/main/unity/classRoomCollaborative/Video.mp4 ).
 
