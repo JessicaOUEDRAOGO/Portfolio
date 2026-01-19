@@ -5,7 +5,7 @@ This project is a virtual reality simulation designed to raise awareness about P
 
 The goal is to help users better understand the challenges faced by people living with Parkinson’s disease through an immersive and interactive VR experience.
 
-[**unity/Parkinson**](https://github.com/JessicaOUEDRAOGO/Portfolio/blob/main/unity/Parkinson/parkison.gif)
+![parkison](https://github.com/user-attachments/assets/d3f08d9e-338a-41f6-a803-ce86bf8624b3)
 
 
 ---
