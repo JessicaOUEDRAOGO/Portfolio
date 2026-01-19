@@ -7,10 +7,6 @@ The project focuses on real-time interaction, role management, and synchronizati
 
 ![Classroom Collaborative Demo](https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/unity/classRoomCollaborative/classRoom.gif)
 
-![Classroom Collaborative Demo](unity/classRoomCollaborative/classRoom.gif)
-
-
-
 ---
 
 ## Objectives
