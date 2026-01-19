@@ -5,6 +5,9 @@ Classroom Collaborative is a multi-user VR classroom designed to enable natural 
 
 The project focuses on real-time interaction, role management, and synchronization to support collaborative learning scenarios.
 
+![Classroom Collaborative Demo](unity/classRoomCollaborative/classRoom.gif)
+
+
 ---
 
 ## Objectives
