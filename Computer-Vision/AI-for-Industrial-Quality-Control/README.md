@@ -110,29 +110,15 @@ The project follows an end-to-end computer vision workflow:
 - Time savings and improved production flow  
 - Scalable approach adaptable to other multi-station manufacturing systems  
 
----
-
-## Demonstration
-
-A demonstration video showcasing **real-time detection** is available in the `demo/` folder.
 
 ---
 
-## Visual Results
-
-The `screenshots/` directory contains:
-- Samples of each defect class from the dataset  
-- Detection results per station  
-- Model predictions in real production conditions  
-
----
-
-## Repository Content
+## File Content
 
 This repository includes:
 - Annotated dataset samples  
 - Trained YOLOv8 model  
-- Python inference and training scripts  
+- Python script for real-time visualization
 - Demonstration video  
 
 ---
@@ -141,6 +127,7 @@ This repository includes:
 
 This project is presented as a **technical portfolio project**, focused on industrial computer vision and multi-station quality control.  
 The methodology can be extended to other sequential manufacturing and assembly systems.
+
 
 
 
