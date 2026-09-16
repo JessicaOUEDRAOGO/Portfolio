@@ -9,27 +9,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
-<script>
-  (function(){
-    var stored = localStorage.getItem('theme');
-    var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    document.documentElement.setAttribute('data-theme', stored || (prefersLight ? 'light' : 'dark'));
-  })();
-</script>
 </head>
 <body>
 
 <div class="app">
   <aside class="sidebar">
-    <div class="top-row">
-      <div class="identity-row">
-        <div class="avatar" id="avatar">JO</div>
-        <div class="identity">
-          <h1 id="identity-name"></h1>
-          <div class="role" id="identity-role"></div>
-        </div>
+    <div class="identity-row">
+      <div class="avatar" id="avatar">JO</div>
+      <div class="identity">
+        <h1 id="identity-name"></h1>
+        <div class="role" id="identity-role"></div>
       </div>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème clair/sombre" title="Changer de thème">🌙</button>
     </div>
 
     <p class="bio" id="identity-bio"></p>
