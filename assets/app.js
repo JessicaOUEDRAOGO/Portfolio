@@ -211,16 +211,23 @@ function route(){
       renderProject(themeKey, parts[2]);
       renderCrumbs(themeKey, p);
       viewDetail.classList.remove('hidden');
+      el('back-to-theme').onclick = ()=>{ location.hash = `#/theme/${themeKey}`; };
     } else {
       renderTheme(themeKey);
       renderCrumbs(themeKey, null);
       viewTheme.classList.remove('hidden');
+      el('back-to-home').onclick = ()=>{ location.hash = '#/'; };
     }
   } else {
     renderCrumbs(null, null);
     viewHome.classList.remove('hidden');
   }
-  window.scrollTo(0,0);
+
+  // scroll to the top of the STAGE content, not the top of the page —
+  // on mobile the sidebar sits above the stage in normal flow, so scrolling
+  // to page-top would force the visitor back past the whole bio/About section.
+  const crumbs = el('crumbs');
+  if(crumbs){ crumbs.scrollIntoView({block:'start'}); }
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
