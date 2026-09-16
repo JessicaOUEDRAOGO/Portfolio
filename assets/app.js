@@ -129,7 +129,7 @@ function slideInner(uid){
   const s = window.__slides[uid];
   const item = s.items[s.idx];
   return `
-    <img src="${item.src}" alt="${item.caption || ''}" onclick="openLightbox('image','${item.src}')">
+    <img src="${item.src}" alt="${item.caption || ''}" onclick="openLightboxGallery('${uid}')">
     ${item.caption ? `<div class="cap">${item.caption}</div>` : ''}
     ${s.items.length > 1 ? `
       <button class="nav-btn prev" onclick="event.stopPropagation(); slideNav('${uid}',-1)">‹</button>
@@ -140,7 +140,34 @@ function slideInner(uid){
 function slideNav(uid, dir){
   const s = window.__slides[uid];
   s.idx = (s.idx + dir + s.items.length) % s.items.length;
-  document.getElementById(uid).innerHTML = slideInner(uid);
+  const inlineEl = document.getElementById(uid);
+  if(inlineEl) inlineEl.innerHTML = slideInner(uid);
+}
+
+/* --- diaporama agrandi dans la lightbox, navigable sans avoir à ressortir --- */
+function openLightboxGallery(uid){
+  el('lightbox-inner').innerHTML = renderLightboxSlide(uid);
+  el('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function renderLightboxSlide(uid){
+  const s = window.__slides[uid];
+  const item = s.items[s.idx];
+  return `<div class="slides lb-slides">
+    <img src="${item.src}" alt="${item.caption || ''}">
+    ${item.caption ? `<div class="cap">${item.caption}</div>` : ''}
+    ${s.items.length > 1 ? `
+      <button class="nav-btn prev" onclick="event.stopPropagation(); gallerySlideNav('${uid}',-1)">‹</button>
+      <button class="nav-btn next" onclick="event.stopPropagation(); gallerySlideNav('${uid}',1)">›</button>
+      <div class="count">${s.idx+1}/${s.items.length}</div>` : ''}
+  </div>`;
+}
+function gallerySlideNav(uid, dir){
+  const s = window.__slides[uid];
+  s.idx = (s.idx + dir + s.items.length) % s.items.length;
+  el('lightbox-inner').innerHTML = renderLightboxSlide(uid);
+  const inlineEl = document.getElementById(uid);
+  if(inlineEl) inlineEl.innerHTML = slideInner(uid);
 }
 
 function renderProject(themeKey, projectId){
@@ -211,12 +238,12 @@ function route(){
       renderProject(themeKey, parts[2]);
       renderCrumbs(themeKey, p);
       viewDetail.classList.remove('hidden');
-      el('back-to-theme').onclick = ()=>{ location.hash = `#/theme/${themeKey}`; };
+      el('back-to-theme-end').onclick = ()=>{ location.hash = `#/theme/${themeKey}`; };
     } else {
       renderTheme(themeKey);
       renderCrumbs(themeKey, null);
       viewTheme.classList.remove('hidden');
-      el('back-to-home').onclick = ()=>{ location.hash = '#/'; };
+      el('back-to-home-end').onclick = ()=>{ location.hash = '#/'; };
     }
   } else {
     renderCrumbs(null, null);
