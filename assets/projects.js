@@ -29,11 +29,15 @@ const P = {
   grdf: { name: "VR Safety — Construction Site", tech: "Unity · Blender · VR Headset", tag: "Unity / VR", tc: "bx",
     descKey: "proj-grdf-desc",
     gif: null,
-    video: "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/Terrarisk_VR1.mp4",
-    poster: "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_1.jpg",
     slides: ["https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_1.jpg", "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_2.jpg", "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_3.jpg", "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_4.jpg", "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_5.jpg", "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_6.jpg", "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_7.jpg"],
     captions: ["A day on the construction site", "Insufficient shoring for surface loads", "A passing vehicle triggers the trench collapse", "With non-compliant shoring", "You are exposed to trench collapse", "With compliant shoring", "A full accident-free workday"],
-    link: "https://github.com/JessicaOUEDRAOGO/Portfolio" }
+    link: "https://github.com/JessicaOUEDRAOGO/Portfolio" },
+  "grdf-video": { name: "TerraRisk VR — Demo", tech: "Unity · Blender · VR Headset", tag: "Unity / VR", tc: "bx",
+    descKey: "proj-grdf-desc",
+    gif: null,
+    video: "https://media.githubusercontent.com/media/JessicaOUEDRAOGO/Portfolio/main/grdf/Terrarisk_VR1.mp4",
+    poster: "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_1.jpg",
+    link: "https://github.com/JessicaOUEDRAOGO/Portfolio" },
 };
 
 function card(id) {
@@ -69,10 +73,13 @@ function openMod(id) {
     med.innerHTML = `<img src="${p.gif}" alt="${p.name}">`;
     slideData = null;
   } else if (p.video) {
-    med.innerHTML = `<video controls style="width:100%;height:100%;object-fit:contain;background:#000" preload="metadata">
+    med.innerHTML = `<video controls style="width:100%;height:100%;object-fit:contain;background:#000" preload="metadata" poster="${p.poster || ''}">
       <source src="${p.video}" type="video/mp4">
     </video>`;
     slideData = null;
+  } else if (p.slides) {
+    slideData = p; slideIdx = 0;
+    renderSlide(med);
   } else {
     med.innerHTML = `<div style="color:#888;font-size:.85rem;padding:2rem;text-align:center">Demo not yet available</div>`;
     slideData = null;
@@ -80,7 +87,6 @@ function openMod(id) {
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function renderSlide(med) {
   const p = slideData;
   med.style.position = 'relative';
