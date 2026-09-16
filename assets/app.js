@@ -75,17 +75,39 @@ function renderTheme(key){
   });
 }
 
+/* --- lightbox --- */
+function openLightbox(type, src, poster){
+  const inner = el('lightbox-inner');
+  if(type === 'image'){
+    inner.innerHTML = `<img src="${src}" alt="">`;
+  } else if(type === 'video'){
+    inner.innerHTML = `<video src="${src}" ${poster ? `poster="${poster}"` : ''} controls autoplay></video>`;
+  }
+  el('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e){
+  if(e && e.target && e.target.id !== 'lightbox' && !e.target.classList.contains('lightbox-close')) return;
+  el('lightbox').classList.remove('open');
+  el('lightbox-inner').innerHTML = '';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeLightbox({target:{id:'lightbox'}}); });
+
 /* --- rendu du bloc média selon son type --- */
 function renderMedia(media){
   if(!media || media.type === 'pending'){
     return `<p class="placeholder">Démonstration à venir</p>`;
   }
   if(media.type === 'gif'){
-    return `<img class="media-gif" src="${media.src}" alt="Démonstration" loading="lazy">`;
+    return `<div class="media-wrap"><img class="media-gif" src="${media.src}" alt="Démonstration" loading="lazy" onclick="openLightbox('image','${media.src}')"></div>`;
   }
   if(media.type === 'video'){
-    return `<video controls preload="none" ${media.poster ? `poster="${media.poster}"` : ''}>
-      <source src="${media.src}" type="video/mp4"></video>`;
+    return `<div class="media-wrap">
+      <video controls preload="none" ${media.poster ? `poster="${media.poster}"` : ''}>
+        <source src="${media.src}" type="video/mp4"></video>
+      <button class="expand-btn" onclick="openLightbox('video','${media.src}','${media.poster || ''}')">⤢ Agrandir</button>
+    </div>`;
   }
   if(media.type === 'youtube'){
     return `<div class="yt-links">${media.urls.map(u=>`<a href="${u.href}" target="_blank" rel="noopener">${u.label} →</a>`).join('')}</div>`;
@@ -106,11 +128,11 @@ function slideInner(uid){
   const s = window.__slides[uid];
   const item = s.items[s.idx];
   return `
-    <img src="${item.src}" alt="${item.caption || ''}">
+    <img src="${item.src}" alt="${item.caption || ''}" onclick="openLightbox('image','${item.src}')">
     ${item.caption ? `<div class="cap">${item.caption}</div>` : ''}
     ${s.items.length > 1 ? `
-      <button class="nav-btn prev" onclick="slideNav('${uid}',-1)">‹</button>
-      <button class="nav-btn next" onclick="slideNav('${uid}',1)">›</button>
+      <button class="nav-btn prev" onclick="event.stopPropagation(); slideNav('${uid}',-1)">‹</button>
+      <button class="nav-btn next" onclick="event.stopPropagation(); slideNav('${uid}',1)">›</button>
       <div class="count">${s.idx+1}/${s.items.length}</div>` : ''}
   `;
 }
