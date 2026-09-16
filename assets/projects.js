@@ -31,13 +31,19 @@ const P = {
     gif: null,
     slides: ["https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_1.jpg", "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_2.jpg", "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_3.jpg", "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_4.jpg", "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_5.jpg", "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_6.jpg", "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_7.jpg"],
     captions: ["A day on the construction site", "Insufficient shoring for surface loads", "A passing vehicle triggers the trench collapse", "With non-compliant shoring", "You are exposed to trench collapse", "With compliant shoring", "A full accident-free workday"],
-    link: "https://github.com/JessicaOUEDRAOGO/Portfolio" }
+    link: "https://github.com/JessicaOUEDRAOGO/Portfolio" },
+  "grdf-video": { name: "TerraRisk VR — Demo", tech: "Unity · Blender · VR Headset", tag: "Unity / VR", tc: "bx",
+    descKey: "proj-grdf-desc",
+    gif: null,
+    video: "https://media.githubusercontent.com/media/JessicaOUEDRAOGO/Portfolio/main/grdf/Terrarisk_VR1.mp4",
+    poster: "https://raw.githubusercontent.com/JessicaOUEDRAOGO/Portfolio/main/grdf/slide_1.jpg",
+    link: "https://github.com/JessicaOUEDRAOGO/Portfolio" },
 };
 
 function card(id) {
   const p = P[id];
   return `<div class="pc" onclick="openMod('${id}')" tabindex="0" role="button" aria-label="${p.name}" onkeydown="if(event.key==='Enter'||event.key===' ')openMod('${id}')">
-    <div class="pt">${p.gif ? `<img src="${p.gif}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>` : p.slides ? `<img src="${p.slides[0]}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div></div>` : `<div class="pte">${p.video ? '▶ Watch demo' : 'Demo coming soon'}</div>`}</div>
+    <div class="pt">${p.video && p.poster ? `<img src="${p.poster}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>` : p.gif ? `<img src="${p.gif}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>` : p.slides ? `<img src="${p.slides[0]}" alt="${p.name}" loading="lazy"><div class="pov"><div class="plc"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div></div>` : `<div class="pte">${p.video ? '▶ Watch demo' : 'Demo coming soon'}</div>`}</div>
     <div class="pi"><p class="pn">${p.name}</p><p class="ptc">${p.tech}</p></div>
   </div>`;
 }
@@ -66,14 +72,14 @@ function openMod(id) {
   if (p.gif) {
     med.innerHTML = `<img src="${p.gif}" alt="${p.name}">`;
     slideData = null;
-  } else if (p.slides) {
-    slideData = p; slideIdx = 0;
-    renderSlide(med);
   } else if (p.video) {
-    med.innerHTML = `<video controls style="width:100%;height:100%;object-fit:contain;background:#000" preload="metadata">
+    med.innerHTML = `<video controls style="width:100%;height:100%;object-fit:contain;background:#000" preload="metadata" poster="${p.poster || ''}">
       <source src="${p.video}" type="video/mp4">
     </video>`;
     slideData = null;
+  } else if (p.slides) {
+    slideData = p; slideIdx = 0;
+    renderSlide(med);
   } else {
     med.innerHTML = `<div style="color:#888;font-size:.85rem;padding:2rem;text-align:center">Demo not yet available</div>`;
     slideData = null;
@@ -81,7 +87,6 @@ function openMod(id) {
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function renderSlide(med) {
   const p = slideData;
   med.style.position = 'relative';
