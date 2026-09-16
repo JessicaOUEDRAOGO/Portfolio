@@ -146,9 +146,9 @@ const SITE = {
           id: "modelisation-3d",
           title: "Modélisation 3D de bâtiments et de mécanismes",
           meta: "Projet de modélisation",
-          problem: "Une image de synthèse trop propre ne convainc personne — il faut que la lumière, les matériaux et l'ambiance donnent l'impression d'un lieu réel, pas d'un rendu 3D.",
-          solution: "Modélisation du bâtiment sous 3ds Max, puis éclairage et matériaux dans Unreal Engine pour un rendu temps réel. Trois ambiances lumineuses réalisées : soirée d'hiver enneigée, lumière filtrée à travers les arbres, contre-plongée en golden hour.",
-          result: "Un rendu photoréaliste et interactif, consultable sous plusieurs éclairages avant la construction du bâtiment. Utilisation potentielle en architecture et en promotion immobilière, pour présenter un projet à un client avant sa réalisation.",
+          problem: "Comment permettre de se projeter dans un bâtiment avant même sa construction et évaluer son apparence dans des conditions réelles d'utilisation ?",
+          solution: "Modélisation du bâtiment sous 3ds Max, puis intégration dans Unreal Engine pour créer un environnement 3D interactif. Différentes conditions d'éclairage et ambiances ont été reproduites afin d'observer comment le bâtiment et ses matériaux évoluent selon son environnement.",
+          result: "Une visualisation interactive permettant d'explorer le bâtiment et d'évaluer son rendu avant sa construction. Ce type d'approche peut servir à l'architecture et à la promotion immobilière pour présenter un projet de manière concrète, faciliter les échanges avec un client et identifier certains choix de conception avant la réalisation.",
           tools: ["Unreal Engine", "3ds Max"],
           link: "https://github.com/JessicaOUEDRAOGO/Portfolio/tree/main/unreal/House",
           media: { type: "slides", items: [
