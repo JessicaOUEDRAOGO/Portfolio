@@ -70,7 +70,7 @@ function renderTheme(key){
   t.projects.forEach(p=>{
     const row = document.createElement('button');
     row.className = 'project-row';
-    row.innerHTML = `<div class="row-left"><div class="proj-title">${p.title}</div><div class="proj-context">${p.meta}</div></div><div class="row-arrow">→</div>`;
+    row.innerHTML = `<div class="row-left"><div class="proj-title">${p.title}</div><div class="proj-context">${p.meta}</div></div><div class="row-arrow">Voir plus →</div>`;
     row.addEventListener('click', ()=>{ location.hash = `#/theme/${key}/${p.id}`; });
     list.appendChild(row);
   });
