@@ -104,7 +104,10 @@
           <p class="torg" data-i18n="xr-t5-org">In partnership with GRDF — ENSAM Chalon-sur-Saône</p>
           <p class="tdesc" data-i18n="xr-t5-desc">Immersive VR safety training developed in partnership with GRDF: the user is placed on an excavation site and experiences the consequences of non-compliant shoring — a trench collapse triggered by a passing vehicle. The simulation contrasts compliant and non-compliant scenarios.</p>
           <div class="ttech"><span class="tb bx">Unity</span><span class="tb bx">Blender</span><span class="tb bx">VR Headset</span></div>
-          <div class="tprojs" id="xp-grdf"></div>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap">
+            <div class="tprojs" id="xp-grdf" style="flex:1;min-width:200px"></div>
+            <div class="tprojs" id="xp-grdf-video" style="flex:1;min-width:200px"></div>
+          </div>
         </div>
       </div>
 
@@ -195,7 +198,8 @@ renderCards({
   xp1: 'classroom',
   xp3: 'quality',
   ep1: 'unreal',
-  'xp-grdf': 'grdf'
+  'xp-grdf': 'grdf',
+  'xp-grdf-video': 'grdf-video'
 });
 </script>
 <script src="assets/main.js"></script>
