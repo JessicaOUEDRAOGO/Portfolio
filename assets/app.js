@@ -222,7 +222,28 @@ function route(){
   window.scrollTo(0,0);
 }
 
+/* --- thème clair / sombre --- */
+function initTheme(){
+  const stored = localStorage.getItem('theme');
+  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  const theme = stored || (prefersLight ? 'light' : 'dark');
+  applyTheme(theme);
+}
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  const btn = el('theme-toggle');
+  if(btn) btn.textContent = theme === 'light' ? '☀️' : '🌙';
+}
+function toggleTheme(){
+  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  const next = current === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('theme', next);
+  applyTheme(next);
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
+  initTheme();
+  el('theme-toggle').addEventListener('click', toggleTheme);
   renderIdentity();
   renderHome();
   route();
