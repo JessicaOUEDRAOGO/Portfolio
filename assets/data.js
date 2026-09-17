@@ -22,7 +22,7 @@ const SITE = {
     name: "Jessica Ouedraogo",
     role: "Ingénieure XR & Électromécanique",
     bio: "Ingénieure électromécanique à l'intersection de la vision par ordinateur, de la réalité étendue et de l'IA industrielle temps réel. Je conçois des systèmes appliqués qui relient le monde physique et le monde numérique.",
-    motivation: "Ce qui me motive : donner à un système physique une intelligence numérique pour qu'il ne se contente plus d'exécuter, mais qu'il perçoive son environnement, comprenne ce qui s'y passe, communique et agisse en conséquence. Qu'il s'agisse de détecter un défaut sur une ligne de production, de suivre un objet en temps réel, d'assister un opérateur ou de rendre un procédé plus autonome et économe en énergie, l'enjeu est le même : transformer les données du monde réel en actions utiles. C'est ce fil conducteur qui relie mes projets."
+    motivation: "Ce qui me motive : donner à un système physique la capacité de percevoir ce qui l'entoure et de commander ses actions en fonction de ce qu'il observe. C'est ce qui m'a amenée à combiner l'automatisation, la vision par ordinateur et la XR : exploiter les données issues du système et de son environnement pour mieux agir sur lui ou interagir avec lui. C'est cette volonté de rapprocher le monde physique et le numérique qui guide mes projets."
   },
 
   skills: [
